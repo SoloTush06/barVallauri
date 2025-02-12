@@ -52,4 +52,4 @@ Alla fine di ogni mese, viene pubblicata una classifica che mostra i 3 utenti co
 ### Per avviare il progetto:
 1. Clonare il repository:
    ```bash
-   git clone https://github.com/tuo-username/vallauri-bar.git
+   git clone https://github.com/tuo-username/barVallauri.git
