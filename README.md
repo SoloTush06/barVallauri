@@ -1,4 +1,4 @@
-# Vallauri Bar ![Vallauri Bar Logo](https://github.com/SoloTush06/barVallauri/blob/main/assets/Logo1.png?raw=true)
+# Vallauri Bar ![Vallauri Bar Logo](assets/Logo1.png)
 
 Vallauri Bar è un gestionale per il bar della scuola, inizialmente sviluppato come applicazione web in C# e successivamente convertito in un'app mobile utilizzando Cordova. L'app consente una gestione facile e rapida delle operazioni di acquisto e vendita nel bar, sia per i clienti che per il personale del bar.
 
