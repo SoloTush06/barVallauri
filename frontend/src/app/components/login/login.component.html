@@ -1,0 +1,34 @@
+<div class="login-container">
+    <div class="login-left">
+      <h2>Login to</h2>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="test@vallauri.edu"
+        />
+        
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="******"
+        />
+        
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-signin">
+          Sign In
+        </button>
+      </form>
+  
+     
+    </div>
+  
+    <div class="login-right">
+      <img src="assets/Logo1.png" alt="Dashboard example" />
+    </div>
+  </div>
+  
