@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
-  private apiUrl =  window.location.origin + ':3000/login';  
+export class LoginService {  
+  private apiUrl = 'https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/login';
   
   constructor(private http: HttpClient) { 
     console.log(this.apiUrl);

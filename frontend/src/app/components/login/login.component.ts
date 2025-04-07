@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators,ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 
@@ -24,16 +24,18 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.invalid) {
+      this.errorMessage = 'Compila correttamente tutti i campi.';
       return;
     }
+
     const { email, password } = this.loginForm.value;
 
     this.loginService.login(email, password).subscribe({
-      next: (response) => {
-        this.router.navigate(['/menu']);  
+      next: () => {
+        this.router.navigate(['/menu']);
       },
       error: (err) => {
-        this.errorMessage = err.error.message; 
+        this.errorMessage = err.error?.message || 'Errore durante il login. Riprova più tardi.';
       }
     });
   }
