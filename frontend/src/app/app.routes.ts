@@ -13,11 +13,12 @@ export const routes: Routes = [
   {
     path: "menu",
     component: MenuComponent,
-    canActivate: [AuthGuard]  // Aggiungi la protezione qui
+    canActivate: [AuthGuard]  
   },
   {
     path: "food",
     component: FoodComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "**",
