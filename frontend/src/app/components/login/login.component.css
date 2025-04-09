@@ -93,3 +93,54 @@ body {
     max-width: 80%;
     max-height: 80%;
 }
+
+
+.top-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c; 
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 1000;
+    animation: fadeSlide 3s ease forwards;
+    font-family: Arial, sans-serif; 
+    letter-spacing: 0.5px;
+  }
+  
+  .top-alert .icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .top-alert .message {
+    flex: 1;
+  }
+ 
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+  }
+  

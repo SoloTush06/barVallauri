@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; 
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   providers: [LoginService],
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
+  showAlert: boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {
     this.loginForm = new FormGroup({
@@ -31,11 +33,19 @@ export class LoginComponent {
     const { email, password } = this.loginForm.value;
 
     this.loginService.login(email, password).subscribe({
-      next: () => {
+      next: (response) => {
+        // Salva il token nel localStorage
+        this.loginService.saveToken(response.token);
+
+        // Naviga alla pagina /menu
         this.router.navigate(['/menu']);
       },
       error: (err) => {
-        this.errorMessage = err.error?.message || 'Errore durante il login. Riprova più tardi.';
+        this.errorMessage = err.error?.message || 'Errore durante il login.';
+        this.showAlert = true;
+        setTimeout(() => {
+          this.showAlert = false;
+        }, 3000);
       }
     });
   }
