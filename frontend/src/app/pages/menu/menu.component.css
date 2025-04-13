@@ -78,3 +78,58 @@ body {
     height: 80px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+    .menu-container {
+      flex-direction: column;
+      height: auto;
+      width: 90%;
+      margin-top: 2rem;
+      padding: 1rem;
+    }
+  
+    .menu-left {
+      padding: 1rem;
+    }
+  
+    .menu-left h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .menu-item {
+      height: auto;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+    }
+  
+    .menu-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-left h2 {
+      font-size: 1.4rem;
+    }
+  
+    .menu-item {
+      font-size: 1rem;
+      padding: 1.2rem;
+    }
+  
+    .menu-icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  

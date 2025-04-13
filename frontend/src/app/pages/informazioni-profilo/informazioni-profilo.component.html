@@ -1,0 +1,22 @@
+<div class="profile-wrapper">
+    <div class="profile-box">
+      <h2>Profilo Utente</h2>
+  
+      <div class="profile-info-grid">
+        <div class="info-card">
+          <img src="https://img.icons8.com/ios-filled/100/4a90e2/user-male-circle.png" alt="User Icon" />
+          <span class="label">Nome e Cognome</span>
+          <span class="value">{{ nome }} {{ cognome }}</span>
+        </div>
+  
+        <div class="info-card">
+          <img src="https://img.icons8.com/ios-filled/100/4a90e2/email-open.png" alt="Email Icon" />
+          <span class="label">Email</span>
+          <span class="email-value">{{ email }}</span>
+        </div>
+      </div>
+  
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+  

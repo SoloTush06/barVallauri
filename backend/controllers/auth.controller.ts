@@ -26,12 +26,18 @@ export const login: RequestHandler = async (req: Request, res: Response): Promis
 
         if (match) {
             const token = jwt.sign(
-                { email: utente.email, userId: utente._id }, 
-                JWT_SECRET, 
-                { expiresIn: JWT_EXPIRATION } 
+                { email: utente.email, userId: utente._id },
+                JWT_SECRET,
+                { expiresIn: JWT_EXPIRATION }
             );
 
-            res.status(200).send({ message: "Login successful", token });
+            res.status(200).send({
+                message: "Login effettuato con successo",
+                token,
+                nome: utente.nome,
+                cognome: utente.cognome,
+                email: utente.email
+            });
         } else {
             res.status(401).send({ message: "Credenziali errate" });
         }
