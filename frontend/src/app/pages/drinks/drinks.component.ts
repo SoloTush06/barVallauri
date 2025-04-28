@@ -1,34 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { SidebarFoodComponent } from '../../components/sidebar-food/sidebar-food.component';
 import { Router } from '@angular/router';
+
 @Component({
   standalone: true,
-  selector: 'app-food',
-  templateUrl: './food.component.html',
-  styleUrls: ['./food.component.css'],
+  selector: 'app-drinks',
+  templateUrl: './drinks.component.html',
+  styleUrls: ['./drinks.component.css'],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, SidebarFoodComponent]
 })
-export class FoodComponent implements OnInit {
+export class DrinksComponent implements OnInit {
   menu: any[] = [];
-  quantities: { [key: string]: number } = {};  // per la selezione
-  carrelloQuantities: { [key: string]: number } = {};  // per il popup caricato dal DB
-  carrelloItems: any[] = [];  // lista di prodotti del carrello
+  quantities: { [key: string]: number } = {};  
+  carrelloQuantities: { [key: string]: number } = {}; 
+  carrelloItems: any[] = []; 
   showSuccessAlert: boolean = false;
   popupVisible: boolean = false;
   messaggioErrore: string = '';
-  carrello: any[] = [];  // Aggiungi questa variabile per il carrello
+  carrello: any[] = [];  
   
-  constructor(private http: HttpClient,private router: Router) {}
-
+  constructor(private http: HttpClient , private router: Router) {}
+ 
   ngOnInit(): void {
     this.caricaMenu();
   }
 
   caricaMenu(): void {
-    this.http.get<any[]>('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/food/menu-cibo')
+    this.http.get<any[]>('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/food/menu-bevande')
       .subscribe({
         next: (data) => {
           this.menu = data;
@@ -61,7 +62,7 @@ export class FoodComponent implements OnInit {
       .filter(item => this.quantities[item.nome] > 0)
       .map(item => ({
         nome: item.nome,
-        quantita: this.quantities[item.nome]   // <-- senza accento
+        quantita: this.quantities[item.nome]   
       }));
 
     if (!carrello.length) {
@@ -82,7 +83,7 @@ export class FoodComponent implements OnInit {
     }).subscribe({
       next: () => {
         this.showSuccessAlert = true;
-        this.resetQuantities(); // Torna tutto a 0 dopo l'aggiunta
+        this.resetQuantities(); 
         setTimeout(() => this.showSuccessAlert = false, 2500);
       },
       error: () => {
@@ -130,7 +131,7 @@ export class FoodComponent implements OnInit {
     this.http.put(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/decrementa`, { email: localStorage.getItem('email'), nome })
       .subscribe({
         next: () => {
-          this.caricaCarrello(); // Ricarica il carrello dopo l'aggiornamento
+          this.caricaCarrello(); 
         },
         error: () => {
           this.messaggioErrore = "Errore nell'aggiornamento del carrello.";
@@ -157,7 +158,6 @@ export class FoodComponent implements OnInit {
     });
   }
   
-
   vaiAlCarrello(): void {
     if (!this.carrelloItems.length) {
       this.messaggioErrore = "Il carrello è vuoto. Non puoi procedere all'acquisto.";
@@ -168,7 +168,6 @@ export class FoodComponent implements OnInit {
     this.popupVisible = false;
     this.router.navigate(['/Acquisto']);
   }
-  
 
   private resetQuantities(): void {
     this.menu.forEach(item => this.quantities[item.nome] = 0);

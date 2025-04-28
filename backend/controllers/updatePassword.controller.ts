@@ -15,7 +15,7 @@ export const updatePassword: RequestHandler = async (req: Request, res: Response
   try {
     await client.connect();
     const db = client.db(DB_NAME);
-    const utentiCollection = db.collection("Utenti"); // stessa collezione del login
+    const utentiCollection = db.collection("Utenti"); 
 
     const utente = await utentiCollection.findOne({ email });
 

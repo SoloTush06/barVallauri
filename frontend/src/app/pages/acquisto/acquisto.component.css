@@ -1,0 +1,115 @@
+/* Impostazioni generali */
+.checkout-container {
+    margin-left: 240px;
+    padding: 20px;
+    height: 100vh;
+    background-color: #f0f2f5;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  /* Titolo del componente */
+  .checkout-container h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Sezione riepilogo carrello */
+  .cart-summary {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Dettagli degli articoli nel carrello */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-item .item-details {
+    flex: 3;
+  }
+  
+  .cart-item h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item p {
+    font-size: 1.1rem;
+    color: #777;
+  }
+  
+  /* Totale carrello */
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .cart-total p {
+    margin: 0;
+  }
+  
+  .cart-total strong {
+    font-weight: bold;
+  }
+  
+  /* Pulsante conferma ordine */
+  .confirm-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(to right, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .confirm-button:hover {
+    background: #2f6cad;
+  }
+  
+  .confirm-button:active {
+    background: #357abd;
+  }
+  
+  /* Sezione carrello vuoto */
+  ng-template#emptyCart {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* Styling dei numeri e prezzi */
+  .cart-item p,
+  .cart-total p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .cart-total strong {
+    color: #333;
+    font-weight: bold;
+  }
+  

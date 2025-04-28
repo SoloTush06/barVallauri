@@ -8,11 +8,16 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { InformazioniProfiloComponent } from './pages/informazioni-profilo/informazioni-profilo.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { DrinksComponent } from './pages/drinks/drinks.component';
 import { AuthGuard } from './auth.guard'; // Importa la guardia
-
+import { AcquistoComponent } from './pages/acquisto/acquisto.component';
 export const routes: Routes = [
   {
     path: "",
+    component: HomeComponent,
+  },
+  {
+    path: "login",
     component: HomeComponent,
   },
   {
@@ -23,6 +28,11 @@ export const routes: Routes = [
   {
     path: "food",
     component: FoodComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "Acquisto",
+    component: AcquistoComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -38,6 +48,11 @@ export const routes: Routes = [
   {
     path: "profilo",
     component: ProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "bibite",
+    component: DrinksComponent,
     canActivate: [AuthGuard]
   },
   {
