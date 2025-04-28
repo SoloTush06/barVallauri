@@ -1,16 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
+.not-found-wrapper {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #4a90e2, #72bcd4);
+    flex-direction: column;
 }
 
 .not-found-container {
@@ -22,7 +15,6 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin: auto; /* Assicura il centraggio */
 }
 
 .not-found-left {

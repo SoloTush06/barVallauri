@@ -1,85 +1,106 @@
 /* sidebar.component.css */
+
+/* Sidebar iniziale */
 .sidebar {
-    width: 220px;
-    background: #ffffff;
-    padding: 20px;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: width 0.3s ease;
+  width: 250px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
 }
 
+/* Titolo della sidebar */
 .sidebar-title {
-    color: #4a90e2;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
+  color: #4a90e2;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Liste di link della sidebar */
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar li {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .sidebar a {
-    text-decoration: none;
-    color: #4a90e2;
-    font-size: 1.2rem;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: #4a90e2;
+  font-size: 1.2rem;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .sidebar a:hover {
-    background: #f0f4fc;
-    transform: translateX(5px);
+  background: #f0f4fc;
+  transform: translateX(5px);
 }
 
 .sidebar a.active {
-    background: #4a90e2;
-    color: white;
+  background: #4a90e2;
+  color: white;
 }
 
-/* Media query per dispositivi mobili */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 180px;
-    }
-
-    .sidebar-title {
-        font-size: 1.5rem;
-    }
-
-    .sidebar a {
-        font-size: 1rem;
-    }
-
-    .sidebar ul {
-        margin-top: 20px;
-    }
-
-    .sidebar li {
-        margin-bottom: 15px;
-    }
-
-    /* Nascondere la sidebar o mostrare un'icona di toggle su mobile (opzionale) */
-    .sidebar.collapsed {
-        width: 0;
-        padding: 0;
-        box-shadow: none;
-    }
+/* Icona del toggle della sidebar */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #4a90e2;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1010;
+  transition: background 0.3s ease;
 }
 
-/* Aggiungi un'animazione per aprire/chiudere la sidebar su dispositivi mobili (opzionale) */
+.sidebar-toggle:hover {
+  background: #357abd;
+}
+
+/* Media queries per dispositivi mobili */
 @media (max-width: 768px) {
-    .sidebar.collapsed {
-        transition: all 0.3s ease;
-    }
+  .sidebar {
+    width: 220px; /* Larghezza iniziale della sidebar */
+  }
+
+  .sidebar-title {
+    font-size: 1.5rem;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+  }
+
+  .sidebar ul {
+    margin-top: 20px;
+  }
+
+  .sidebar li {
+    margin-bottom: 15px;
+  }
+
+  /* Nascondere la sidebar quando è collassata */
+  .sidebar.collapsed {
+    left: -250px;  /* Sposta completamente fuori dallo schermo */
+  }
+
+  /* Mostra il bottone del toggle su mobile */
+  .sidebar-toggle {
+    display: block;
+  }
 }

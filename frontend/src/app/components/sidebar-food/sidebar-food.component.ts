@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sidebar-food.component.css'
 })
 export class SidebarFoodComponent {
-  isCollapsed: boolean = false;
+   isCollapsed = false;
 
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;

@@ -1,12 +1,14 @@
+<!-- Sidebar -->
 <nav class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
   <h2 class="sidebar-title">Menu</h2>
   <ul>
-      <li><a routerLink="/food" routerLinkActive="active">Cibo</a></li>
-      <li><a routerLink="/bibite" routerLinkActive="active">Bibite</a></li>
-      <li><a routerLink="/dolci" routerLinkActive="active">Dolci</a></li>
+    <li><a routerLink="/food" routerLinkActive="active">Cibo</a></li>
+    <li><a routerLink="/bibite" routerLinkActive="active">Bibite</a></li>
+    <li><a routerLink="/dolci" routerLinkActive="active">Dolci</a></li>
   </ul>
 </nav>
 
+<!-- Icona del toggle per la sidebar -->
 <div class="sidebar-toggle" (click)="toggleSidebar()">
-  <i class="fas fa-bars"></i> 
+  <i class="fas fa-bars"></i> <!-- Icona del toggle -->
 </div>

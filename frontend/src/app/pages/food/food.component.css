@@ -1,8 +1,15 @@
 html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Segoe UI', sans-serif;
   background: #f0f2f5;
-  height: 100vh;
+  overflow: hidden; /* Disabilita lo scroll della pagina */
+}
+
+.container {
+  height: 100%;
+  overflow: hidden;
 }
 
 .menu {
@@ -12,6 +19,7 @@ html, body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Disabilita lo scroll del menu */
 }
 
 .menu-header {
@@ -51,11 +59,12 @@ html, body {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
   gap: 1.5rem;
   flex: 1;
   overflow-y: auto;
   padding-right: 10px;
+  max-height: calc(100vh - 120px);
 }
 
 .menu-item {
@@ -119,6 +128,7 @@ html, body {
 
 .success-alert {
   margin-top: 15px;
+  align-items: center;
   color: green;
   font-weight: bold;
   font-size: 1.1rem;
@@ -250,7 +260,6 @@ html, body {
   align-items: center;
 }
 
-
 .item-controls {
   display: flex;
   align-items: center;
@@ -284,8 +293,84 @@ span {
 }
 
 span {
-  min-width: 30px; /* Impostato per evitare che il testo vada fuori dal layout */
+  min-width: 30px;
   text-align: center;
+}
+
+/* Media Query per Dispositivi Mobili */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0; /* Rimuovi il margine sinistro sui dispositivi mobili */
+  }
+
+  .menu {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .menu-header h2 {
+    font-size: 2rem; /* Riduce la dimensione del titolo */
+  }
+
+  .cart-icon {
+    font-size: 1.8rem;
+    padding-right: 15px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Riduce la dimensione dei prodotti per schermi più piccoli */
+  }
+
+  .menu-item {
+    padding: 15px; /* Riduce lo spazio nei prodotti */
+  }
+
+  .add-to-cart-btn {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+
+  .cart-popup {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .cart-item {
+    font-size: 0.9rem;
+    flex-direction: column; /* Centra verticalmente la lista degli oggetti nel carrello */
+  }
+
+  .cart-popup h3 {
+    font-size: 1.5rem; /* Riduce la dimensione del titolo nel popup */
+  }
+
+  .confirm-btn,
+  .close-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header h2 {
+    font-size: 1.8rem; /* Ulteriore riduzione della dimensione del titolo */
+  }
+
+  .cart-popup {
+    width: 90%;
+  }
+
+  .menu-item {
+    padding: 10px; /* Ulteriore riduzione della dimensione dei prodotti */
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 20px; /* Riduce la dimensione del bottone */
+  }
+
+  .cart-item input[type="number"] {
+    width: 50px; /* Riduce la larghezza dell'input per la quantità */
+  }
 }
 
 .error-alert {
