@@ -11,7 +11,8 @@ import { getCarrello } from "../controllers/getCarrello";
 import { incrementaCarrello } from "../controllers/incrementaCarrello";
 import { decrementaCarrello } from "../controllers/decrementaCarrello";
 import { rimuoviCarrello } from "../controllers/rimuoviCarrello";
-
+import { addOrdineInAttesa } from "../controllers/ordiniAttesa";
+import { sendOrderPendingEmail } from "../controllers/sendOrderPendingEmail";
 dotenv.config();
 
 const app = express();
@@ -47,6 +48,9 @@ app.get("/carrello/:email", getCarrello);
 app.put("/carrello/incrementa", incrementaCarrello);
 app.put("/carrello/decrementa", decrementaCarrello);
 app.delete("/carrello/rimuovi", rimuoviCarrello);
+
+app.post("/ordini/aggiungi", addOrdineInAttesa);
+app.post("/ordini/email-in-attesa", sendOrderPendingEmail);
 
 app.listen(PORT, () => {
     console.log(`Server in ascolto sulla porta ${PORT}`);

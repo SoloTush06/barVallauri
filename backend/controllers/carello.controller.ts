@@ -25,10 +25,17 @@ export const addCarrello: RequestHandler = async (req, res) => {
         const existingItem = updatedCart.find((existingItem: any) => existingItem.nome === item.nome);
         if (existingItem) {
           existingItem.quantita += item.quantita;
+          // Se vuoi aggiornare anche il prezzo in caso cambi, puoi aggiungere:
+          existingItem.prezzo = item.prezzo;
         } else {
-          updatedCart.push(item);
+          updatedCart.push({
+            nome: item.nome,
+            quantita: item.quantita,
+            prezzo: item.prezzo
+          });
         }
       });
+      
 
       await carrelloCollection.updateOne(
         { email },

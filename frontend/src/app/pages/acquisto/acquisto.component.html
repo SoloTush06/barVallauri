@@ -1,25 +1,33 @@
 <div class="checkout-container">
+  <div class="checkout-left">
     <h2>Resoconto Carrello</h2>
-  
-    <div *ngIf="cartItems.length > 0; else emptyCart" class="cart-summary">
+
+    <div *ngIf="cartItems.length > 0; else emptyCart" class="cart-list">
       <div class="cart-item" *ngFor="let item of cartItems">
-        <div class="item-details">
-          <h3>{{ item.name }}</h3>
-          <p>Quantità: {{ item.quantity }}</p>
-          <p>Prezzo unitario: € {{ item.price | number:'1.2-2' }}</p>
+        <div class="item-info">
+          <h3>{{ item.nome }}</h3>
+          <p>Quantità: {{ item.quantita }}</p>
+          <p>Prezzo unitario: € {{ item.prezzo | number:'1.2-2' }}</p>
+        </div>
+        <div class="item-total">
+          € {{ item.prezzo * item.quantita | number:'1.2-2' }}
         </div>
       </div>
-  
-      <div class="cart-total">
-        <p><strong>Numero totale articoli:</strong> {{ getTotalItems() }}</p>
+
+      <div class="cart-summary">
+        <p><strong>Totale articoli:</strong> {{ getTotalItems() }}</p>
         <p><strong>Totale:</strong> € {{ getTotalPrice() | number:'1.2-2' }}</p>
       </div>
-  
+
       <button class="confirm-button" (click)="confirmOrder()">Conferma Ordine</button>
     </div>
-  
+
     <ng-template #emptyCart>
-      <p>Il carrello è vuoto.</p>
+      <p class="empty-message">Il carrello è vuoto.</p>
     </ng-template>
+
+    <div *ngIf="messaggioErrore" class="error-alert">
+      {{ messaggioErrore }}
+    </div>
   </div>
-  
+</div>

@@ -59,11 +59,12 @@ export class DrinksComponent implements OnInit {
 
   aggiungiAlCarrello(): void {
     const carrello = this.menu
-      .filter(item => this.quantities[item.nome] > 0)
-      .map(item => ({
-        nome: item.nome,
-        quantita: this.quantities[item.nome]   
-      }));
+  .filter(item => this.quantities[item.nome] > 0)
+  .map(item => ({
+    nome: item.nome,
+    quantita: this.quantities[item.nome],
+    prezzo: item.prezzo  // aggiunto il prezzo
+  }));
 
     if (!carrello.length) {
       this.messaggioErrore = "Nessun prodotto selezionato.";
