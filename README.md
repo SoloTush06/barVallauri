@@ -1,6 +1,6 @@
 # Vallauri Bar ![Vallauri Bar Logo](assets/Logo1.png)
 
-Vallauri Bar è un gestionale per il bar della scuola, inizialmente sviluppato come applicazione web in C# e successivamente convertito in un'app mobile utilizzando Cordova. L'app consente una gestione facile e rapida delle operazioni di acquisto e vendita nel bar, sia per i clienti che per il personale del bar.
+Vallauri Bar è un gestionale per il bar della scuola, inizialmente sviluppato come applicazione web in angular + express e successivamente convertito in un'app mobile utilizzando Cordova. L'app consente una gestione facile e rapida delle operazioni di acquisto e vendita nel bar, sia per i clienti che per il personale del bar.
 
 ---
 
@@ -36,9 +36,9 @@ Alla fine di ogni mese, viene pubblicata una classifica che mostra i 3 utenti co
 
 ## Tecnologie Utilizzate
 
-- 💻 **Backend**: C#
+- 💻 **Backend**: Expresse
 - 📱 **Mobile App**: Cordova
-- 📦 **Database**: (Indicare il tipo di database utilizzato, se applicabile)
+- 📦 **Database**: MongoDB
 - 📑 **PDF Generation**: (Tecnologia o libreria utilizzata per generare la ricevuta PDF)
 
 ---
