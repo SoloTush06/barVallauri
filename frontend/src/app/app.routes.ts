@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -11,6 +10,9 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { DrinksComponent } from './pages/drinks/drinks.component';
 import { AuthGuard } from './auth.guard'; // Importa la guardia
 import { AcquistoComponent } from './pages/acquisto/acquisto.component';
+import { ResocontoOrdiniComponent } from './pages/resoconto-ordini/resoconto-ordini.component';
+import { ClassificaMensileComponent } from './pages/classifica-mensile/classifica-mensile.component';
+
 export const routes: Routes = [
   {
     path: "",
@@ -53,6 +55,16 @@ export const routes: Routes = [
   {
     path: "bibite",
     component: DrinksComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "resocontoOrdini",
+    component: ResocontoOrdiniComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "classificaMensile",
+    component: ClassificaMensileComponent,
     canActivate: [AuthGuard]
   },
   {

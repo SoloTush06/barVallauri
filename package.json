@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/pg": "^8.11.11"
+  },
+  "dependencies": {
+    "jspdf": "^3.0.1"
   }
 }

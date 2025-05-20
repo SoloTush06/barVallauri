@@ -1,136 +1,122 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background: white;
+  box-sizing: border-box;
+}
+
+.profile-left h2 {
+  color: #4a90e2;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.profile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a90e2;
+  min-height: 150px;
+  box-sizing: border-box;
+}
+
+.profile-item:hover {
+  background-color: #e0e0e0;
+}
+
+.profile-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .menu-container {
+    padding: 1.5rem;
   }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f9f9f9;
-  }
-  
-  .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;
-    height: 500px;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin: auto;
-  }
-  
+
   .profile-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background: white;
-    width: 100%;
+    padding: 1rem;
   }
-  
+
   .profile-left h2 {
-    color: #4a90e2;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: 1.6rem;
   }
-  
-  .profile-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 100%;
-    max-width: 500px;
-  }
-  
+
   .profile-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #4a90e2;
-    height: 150px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
   }
-  
-  .profile-item:hover {
-    background-color: #e0e0e0;
-  }
-  
+
   .profile-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
   }
-  
-  @media (max-width: 768px) {
-    .profile-container {
-      flex-direction: column;
-      height: auto;
-      width: 90%;
-      margin-top: 2rem;
-      padding: 1rem;
-    }
-  
-    .profile-left {
-      padding: 1rem;
-    }
-  
-    .profile-left h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-  
-    .profile-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    .profile-item {
-      height: auto;
-      padding: 1.5rem;
-      font-size: 1.1rem;
-    }
-  
-    .profile-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 8px;
-    }
+}
+
+/* Smartphone */
+@media (max-width: 480px) {
+  .profile-left h2 {
+    font-size: 1.4rem;
   }
-  
-  @media (max-width: 480px) {
-    .profile-left h2 {
-      font-size: 1.4rem;
-    }
-  
-    .profile-item {
-      font-size: 1rem;
-      padding: 1.2rem;
-    }
-  
-    .profile-icon {
-      width: 50px;
-      height: 50px;
-    }
+
+  .profile-item {
+    font-size: 1rem;
+    padding: 1.2rem;
   }
-  
+
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+  }
+}

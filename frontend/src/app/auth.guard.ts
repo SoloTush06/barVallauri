@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { jwtDecode } from 'jwt-decode';  // Importa la libreria jwt-decode
+import { jwtDecode } from 'jwt-decode';  
 
 @Injectable({
   providedIn: 'root',

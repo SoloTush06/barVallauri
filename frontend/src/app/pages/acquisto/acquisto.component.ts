@@ -82,7 +82,7 @@ export class AcquistoComponent implements OnInit {
           next: () => {
             alert(`Ordine confermato! Codice ordine: ${codiceOrdine}`);
             this.cartItems = []; 
-            this.router.navigate(['/']);
+            this.router.navigate(['/dashboard']);
           },
           error: () => {
             this.messaggioErrore = "Errore nell'invio dell'email di conferma.";

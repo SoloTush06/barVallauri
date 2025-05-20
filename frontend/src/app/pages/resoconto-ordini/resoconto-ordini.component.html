@@ -1,0 +1,25 @@
+<div class="resoconto-container">
+  <div class="menu-container">
+    <div class="profile-left">
+      <h2>Resoconto Ordini</h2>
+      <div class="profile-grid" *ngIf="ordini.length > 0; else nessunOrdine">
+        <div class="profile-item" *ngFor="let ordine of ordini">
+          <div>
+            <strong>Data ordine:</strong> {{ ordine.creatoIl | date: 'short' }}<br />
+            <strong>Prodotti:</strong>
+            <ul>
+              <li *ngFor="let prodotto of ordine.prodotti">
+                <strong>{{ prodotto.nome }} </strong> x{{ prodotto.quantita }} {{ prodotto.prezzo | currency: 'EUR' }}
+              </li>
+            </ul>
+          </div>
+          <button class="btn-stampa" (click)="stampaFattura(ordine)">Stampa fattura</button>
+        </div>
+      </div>
+      <ng-template #nessunOrdine>
+        <p style="color: gray; text-align: center;">Nessun ordine confermato trovato.</p>
+      </ng-template>
+    </div>
+  </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="profile-container">
+  <div class="menu-container">
+    <div class="profile-left">
+      <h2 class="titolo-classifica">Classifica Mensile</h2>
+      <div class="podio">
+        <!-- Secondo posto -->
+        <div class="podio-item posizione-1" *ngIf="classifica[1]">
+          <div class="cerchio">2</div>
+          <div class="email">{{ classifica[1]._id.split('@')[0] }}</div>
+          <div class="ordini">{{ classifica[1].numeroOrdini }} ordini</div>
+        </div>
+
+        <!-- Primo posto con coppa e etichetta -->
+        <div class="podio-item posizione-0" *ngIf="classifica[0]">
+          <div class="cerchio">1</div>
+          <div class="email">{{ classifica[0]._id.split('@')[0] }}</div>
+          <div class="etichetta-campione">Campione del mese</div>
+          <div class="ordini">{{ classifica[0].numeroOrdini }} ordini</div>
+        </div>
+
+        <!-- Terzo posto -->
+        <div class="podio-item posizione-2" *ngIf="classifica[2]">
+          <div class="cerchio">3</div>
+          <div class="email">{{ classifica[2]._id.split('@')[0] }}</div>
+          <div class="ordini">{{ classifica[2].numeroOrdini }} ordini</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

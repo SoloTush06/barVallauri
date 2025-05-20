@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router'; // ✅ aggiunto Router
 import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -14,9 +14,13 @@ import { CommonModule } from '@angular/common';
 export class ResetPasswordComponent implements OnInit {
   email: string = '';
   newPassword: string = '';
-  showSuccessAlert: boolean = false; // ✅ Proprietà mancante aggiunta
+  showSuccessAlert: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private router: Router // ✅ iniettato Router
+  ) {}
 
   ngOnInit(): void {
     this.email = this.route.snapshot.queryParamMap.get('email') || '';
@@ -29,9 +33,11 @@ export class ResetPasswordComponent implements OnInit {
     }).subscribe({
       next: () => {
         this.showSuccessAlert = true;
+
         setTimeout(() => {
           this.showSuccessAlert = false;
-        }, 3000);
+          this.router.navigate(['/']);
+        }, 1000);
       },
       error: () => alert('Errore durante l\'aggiornamento'),
     });
