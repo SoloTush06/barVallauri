@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-color: #f5f5f5;
 }
 
 .menu-container {
@@ -32,7 +34,7 @@
 .menu-left h2 {
     color: #4a90e2;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -71,56 +73,63 @@
     margin-bottom: 10px;
 }
 
+/* Tablet e schermi medio-piccoli */
 @media (max-width: 768px) {
+    .dashboard-container {
+        padding: 2rem 1rem;
+        min-height: auto;
+    }
+
     .menu-container {
         flex-direction: column;
         height: auto;
-        width: 90%;
-        padding: 1rem;
+        width: 100%;
+        max-width: 500px;
+        padding: 2rem;
         margin-top: 2rem;
     }
 
     .menu-left {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .menu-left h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .menu-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
         width: 100%;
     }
 
     .menu-item {
         height: auto;
+        min-height: 180px;
+        padding: 2rem 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .menu-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+}
+
+/* Smartphone e schermi molto piccoli */
+@media (max-width: 480px) {
+    .menu-left h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-item {
+        font-size: 1.2rem;
         padding: 1.5rem;
-        font-size: 1.1rem;
     }
 
     .menu-icon {
         width: 60px;
-        height: 60px;
-        margin-bottom: 8px;
-    }
-}
-
-/* Media query per schermi molto piccoli (max-width: 480px) */
-@media (max-width: 480px) {
-    .menu-left h2 {
-        font-size: 1.4rem;
-    }
-
-    .menu-item {
-        font-size: 1rem;
-        padding: 1.2rem;
-    }
-
-    .menu-icon {
-        width: 50px;
-        height: 50px;
     }
 }
