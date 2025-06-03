@@ -51,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #f0f0f0;
+    background: none;
     padding: 20px;
     border-radius: 6px;
     cursor: pointer;
