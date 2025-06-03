@@ -24,7 +24,7 @@ export const sendResetPasswordLink = (req: Request, res: Response): void => {
 
     console.log(`Password reset requested for email: ${email}`);
 
-    const resetLink = `https://friendly-barnacle-9px9jq69454fprpg-4200.app.github.dev/reset-password?email=${email}`;
+    const resetLink = `http://109.123.240.145:3000/reset-password?email=${email}`;
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
