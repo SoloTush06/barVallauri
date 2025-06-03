@@ -29,7 +29,7 @@ export class DrinksComponent implements OnInit {
   }
 
   caricaMenu(): void {
-    this.http.get<any[]>('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/food/menu-bevande')
+    this.http.get<any[]>('http://109.123.240.145:3000/food/menu-bevande')
       .subscribe({
         next: (data) => {
           this.menu = data;
@@ -78,7 +78,7 @@ export class DrinksComponent implements OnInit {
       return;
     }
 
-    this.http.post('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello', {
+    this.http.post('http://109.123.240.145:3000/carrello', {
       email,
       carrello
     }).subscribe({
@@ -100,7 +100,7 @@ export class DrinksComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/${email}`)
+    this.http.get<any>(`http://109.123.240.145:3000/carrello/${email}`)
       .subscribe({
         next: (response) => {
           this.carrelloItems = response.carrello || [];
@@ -117,7 +117,7 @@ export class DrinksComponent implements OnInit {
   }
 
   incrementaCarrello(nome: string): void {
-    this.http.put(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/incrementa`, { email: localStorage.getItem('email'), nome })
+    this.http.put(`http://109.123.240.145:3000/carrello/incrementa`, { email: localStorage.getItem('email'), nome })
       .subscribe({
         next: () => {
           this.caricaCarrello(); 
@@ -129,7 +129,7 @@ export class DrinksComponent implements OnInit {
   }
   
   decrementaCarrello(nome: string): void {
-    this.http.put(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/decrementa`, { email: localStorage.getItem('email'), nome })
+    this.http.put(`http://109.123.240.145:3000/carrello/decrementa`, { email: localStorage.getItem('email'), nome })
       .subscribe({
         next: () => {
           this.caricaCarrello(); 
@@ -147,7 +147,7 @@ export class DrinksComponent implements OnInit {
       return;
     }
   
-    this.http.request('delete', `https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/rimuovi`, {
+    this.http.request('delete', `http://109.123.240.145:3000/carrello/rimuovi`, {
       body: { email, nome }
     }).subscribe({
       next: () => {
@@ -181,7 +181,7 @@ export class DrinksComponent implements OnInit {
       return;
     }
   
-    this.http.get(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/${email}`)
+    this.http.get(`http://109.123.240.145:3000/carrello/${email}`)
       .subscribe({
         next: (response: any) => {
           this.carrello = response.carrello;

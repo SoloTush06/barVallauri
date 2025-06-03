@@ -27,7 +27,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   resetPassword(): void {
-    this.http.post('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/login/update-password', {
+    this.http.post('http://109.123.240.145:3000/login/update-password', {
       email: this.email,
       newPassword: this.newPassword,
     }).subscribe({

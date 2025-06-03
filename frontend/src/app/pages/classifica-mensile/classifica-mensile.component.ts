@@ -14,7 +14,7 @@ export class ClassificaMensileComponent  implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/classifica-mensile')
+    this.http.get<any[]>('http://109.123.240.145:3000/classifica-mensile')
       .subscribe({
         next: data => this.classifica = data,
         error: err => console.error(err)

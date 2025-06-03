@@ -33,7 +33,7 @@ export class AcquistoComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/carrello/${email}`)
+    this.http.get<any>(`http://109.123.240.145:3000/carrello/${email}`)
       .subscribe({
         next: (response) => {
           this.cartItems = response.carrello || [];
@@ -68,14 +68,14 @@ export class AcquistoComponent implements OnInit {
       return;
     }
 
-    this.http.post('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/ordini/aggiungi', {
+    this.http.post('http://109.123.240.145:3000/ordini/aggiungi', {
       email,
       cartItems: this.cartItems,
       totale,
       codiceOrdine
     }).subscribe({
       next: () => {
-        this.http.post('https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/ordini/email-in-attesa', {
+        this.http.post('http://109.123.240.145:3000/ordini/email-in-attesa', {
           email,
           codiceOrdine
         }).subscribe({
