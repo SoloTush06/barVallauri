@@ -8,7 +8,7 @@ export const getClassificaMensile: RequestHandler = async (req, res) => {
   try {
     await client.connect();
     const db = client.db(DB_NAME);
-    const ordiniCollection = db.collection("ordiniAccettati");
+    const ordiniCollection = db.collection("ordiniRitirati");
 
     const oggi = new Date();
     const inizioMese = startOfMonth(oggi);
