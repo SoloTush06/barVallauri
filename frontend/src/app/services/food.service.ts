@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FoodService {
-  private baseUrl = 'https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/food'; 
+  private baseUrl = 'http://109.123.240.145:3000/food'; 
 
   constructor(private http: HttpClient) {}
 

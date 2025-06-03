@@ -19,7 +19,7 @@ export class ResocontoOrdiniComponent implements OnInit {
   ngOnInit(): void {
     const email = localStorage.getItem('email');
     if (email) {
-      this.http.get<any[]>(`https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/ordiniAccettati/${email}`).subscribe({
+      this.http.get<any[]>(`http://109.123.240.145:3000/ordiniAccettati/${email}`).subscribe({
         next: (data) => this.ordini = data,
         error: (err) => console.error('Errore nel recupero degli ordini:', err)
       });

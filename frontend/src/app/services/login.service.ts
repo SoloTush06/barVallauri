@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'https://friendly-barnacle-9px9jq69454fprpg-3000.app.github.dev/login'; 
+  private apiUrl = ' http://109.123.240.145:3000/login'; 
 
   constructor(private http: HttpClient) {}
 
