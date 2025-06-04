@@ -1,8 +1,12 @@
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM nginx:alpine",
-    "COPY . /usr/share/nginx/html",
-    "EXPOSE 80"
+    "FROM node:18",
+    "WORKDIR /app",
+    "RUN curl -s https://worldtimeapi.org/api/timezone/Europe/Rome | grep datetime",
+    "COPY . .",
+    "RUN npm install",
+    "CMD [\"npm\", \"start\"]",
+    "EXPOSE 4200"
   ]
 }
