@@ -6,7 +6,7 @@
     "RUN curl -s https://worldtimeapi.org/api/timezone/Europe/Rome | grep datetime",
     "COPY . .",
     "RUN npm install",
-    "CMD [\"npm\", \"start\"]",
+    "CMD [\"ng serve --host 0.0.0.0\"]",
     "EXPOSE 4200"
   ]
 }
