@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FoodService {
-  private baseUrl = 'http://109.123.240.145:3000/food'; 
+  private apiUrl = ' https://vallauribar.connectify.it/api/food'; 
 
   constructor(private http: HttpClient) {}
 
