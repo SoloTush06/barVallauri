@@ -33,7 +33,7 @@ export class AcquistoComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>(`http://109.123.240.145:3000/carrello/${email}`)
+    this.http.get<any>(`https://vallauribar.connectify.it/api/carrello/${email}`)
       .subscribe({
         next: (response) => {
           this.cartItems = response.carrello || [];
@@ -68,14 +68,14 @@ export class AcquistoComponent implements OnInit {
       return;
     }
 
-    this.http.post('http://109.123.240.145:3000/ordini/aggiungi', {
+    this.http.post('https://vallauribar.connectify.it/api/ordini/aggiungi', {
       email,
       cartItems: this.cartItems,
       totale,
       codiceOrdine
     }).subscribe({
       next: () => {
-        this.http.post('http://109.123.240.145:3000/ordini/email-in-attesa', {
+        this.http.post('https://vallauribar.connectify.it/api/ordini/email-in-attesa', {
           email,
           codiceOrdine
         }).subscribe({

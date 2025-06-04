@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = ' https://vallauribar.connectify.it/api/login'; 
+  private apiUrl = 'https://vallauribar.connectify.it/api/login'; 
 
   constructor(private http: HttpClient) {}
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FoodService {
-  private apiUrl = ' https://vallauribar.connectify.it/api/food'; 
+  private apiUrl = 'https://vallauribar.connectify.it/api/food'; 
 
   constructor(private http: HttpClient) {}
 

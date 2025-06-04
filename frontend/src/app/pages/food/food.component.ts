@@ -28,7 +28,7 @@ export class FoodComponent implements OnInit {
   }
 
   caricaMenu(): void {
-    this.http.get<any[]>('http://109.123.240.145:3000/food/menu-cibo')
+    this.http.get<any[]>('https://vallauribar.connectify.it/api/food/menu-cibo')
       .subscribe({
         next: (data) => {
           this.menu = data;
@@ -78,7 +78,7 @@ export class FoodComponent implements OnInit {
       return;
     }
 
-    this.http.post('http://109.123.240.145:3000/carrello', {
+    this.http.post('https://vallauribar.connectify.it/api/carrello', {
       email,
       carrello
     }).subscribe({
@@ -100,7 +100,7 @@ export class FoodComponent implements OnInit {
       return;
     }
 
-    this.http.get<any>(`http://109.123.240.145:3000/carrello/${email}`)
+    this.http.get<any>(`https://vallauribar.connectify.it/api/carrello/${email}`)
       .subscribe({
         next: (response) => {
           this.carrelloItems = response.carrello || [];
@@ -117,7 +117,7 @@ export class FoodComponent implements OnInit {
   }
 
   incrementaCarrello(nome: string): void {
-    this.http.put(`http://109.123.240.145:3000/carrello/incrementa`, { email: localStorage.getItem('email'), nome })
+    this.http.put(`https://vallauribar.connectify.it/api/carrello/incrementa`, { email: localStorage.getItem('email'), nome })
       .subscribe({
         next: () => {
           this.caricaCarrello(); 
@@ -129,7 +129,7 @@ export class FoodComponent implements OnInit {
   }
   
   decrementaCarrello(nome: string): void {
-    this.http.put(`http://109.123.240.145:3000/carrello/decrementa`, { email: localStorage.getItem('email'), nome })
+    this.http.put(`https://vallauribar.connectify.it/api/carrello/decrementa`, { email: localStorage.getItem('email'), nome })
       .subscribe({
         next: () => {
           this.caricaCarrello(); // Ricarica il carrello dopo l'aggiornamento
@@ -147,7 +147,7 @@ export class FoodComponent implements OnInit {
       return;
     }
   
-    this.http.request('delete', `http://109.123.240.145:3000/carrello/rimuovi`, {
+    this.http.request('delete', `https://vallauribar.connectify.it/api/carrello/rimuovi`, {
       body: { email, nome }
     }).subscribe({
       next: () => {
@@ -183,7 +183,7 @@ export class FoodComponent implements OnInit {
       return;
     }
   
-    this.http.get(`http://109.123.240.145:3000/carrello/${email}`)
+    this.http.get(`https://vallauribar.connectify.it/api/carrello/${email}`)
       .subscribe({
         next: (response: any) => {
           this.carrello = response.carrello;

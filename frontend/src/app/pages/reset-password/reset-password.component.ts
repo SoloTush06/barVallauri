@@ -27,7 +27,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   resetPassword(): void {
-    this.http.post('http://109.123.240.145:3000/login/update-password', {
+    this.http.post('https://vallauribar.connectify.it/api/login/update-password', {
       email: this.email,
       newPassword: this.newPassword,
     }).subscribe({
