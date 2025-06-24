@@ -24,7 +24,7 @@ export const sendResetPasswordLink = (req: Request, res: Response): void => {
 
     console.log(`Password reset requested for email: ${email}`);
 
-    const resetLink = `http://109.123.240.145:3080/reset-password?email=${email}`;
+    const resetLink = `https://vallauribar.connectify.it/reset-password?email=${email}`;
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
